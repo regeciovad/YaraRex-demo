@@ -1,0 +1,94 @@
+diff --git a/libyara/modules/cuckoo/cuckoo.c b/libyara/modules/cuckoo/cuckoo.c
+index f2ba9e66..217bfdd9 100644
+--- a/libyara/modules/cuckoo/cuckoo.c
++++ b/libyara/modules/cuckoo/cuckoo.c
+@@ -93,8 +93,7 @@ define_function(network_dns_lookup)
+     {
+       if (yr_re_match(context, regexp_argument(1), hostname) > 0)
+       {
+-        result = 1;
+-        break;
++        result++;
+       }
+     }
+   }
+@@ -131,8 +130,7 @@ uint64_t http_request(
+            (methods & METHOD_POST && strcasecmp(method, "post") == 0)) &&
+           yr_re_match(context, uri_regexp, uri) > 0)
+       {
+-        result = 1;
+-        break;
++        result++;
+       }
+     }
+   }
+@@ -181,8 +179,7 @@ define_function(network_host)
+   {
+     if (yr_re_match(context, regexp_argument(1), json_string_value(value)) > 0)
+     {
+-      result = 1;
+-      break;
++      result++;
+     }
+   }
+ 
+@@ -215,8 +212,7 @@ define_function(network_tcp)
+       {
+         if ((int64_t) dport == integer_argument(2))
+         {
+-          result = 1;
+-          break;
++          result++;
+         }
+       }
+     }
+@@ -252,8 +248,7 @@ define_function(network_udp)
+       {
+         if ((int64_t) dport == integer_argument(2))
+         {
+-          result = 1;
+-          break;
++          result++;
+         }
+       }
+     }
+@@ -285,8 +280,7 @@ define_function(network_http_user_agent)
+     {
+       if (yr_re_match(context, regexp_argument(1), user_agent) > 0)
+       {
+-        result = 1;
+-        break;
++        result++;
+       }
+     }
+   }
+@@ -310,8 +304,7 @@ define_function(registry_key_access)
+   {
+     if (yr_re_match(context, regexp_argument(1), json_string_value(value)) > 0)
+     {
+-      result = 1;
+-      break;
++      result++;
+     }
+   }
+ 
+@@ -334,8 +327,7 @@ define_function(filesystem_file_access)
+   {
+     if (yr_re_match(context, regexp_argument(1), json_string_value(value)) > 0)
+     {
+-      result = 1;
+-      break;
++      result++;
+     }
+   }
+ 
+@@ -358,8 +350,7 @@ define_function(sync_mutex)
+   {
+     if (yr_re_match(context, regexp_argument(1), json_string_value(value)) > 0)
+     {
+-      result = 1;
+-      break;
++      result++;
+     }
+   }
+ 
