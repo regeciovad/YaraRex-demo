@@ -10,4 +10,4 @@ The file `cuckoo_patch_file.patch` contains a small change in Yara code. This ca
 git apply cuckoo_patch_file.patch 
 ```
 
-Dataset of CAPE reports are available here: https://drive.google.com/file/d/1Lx5e4vMN7BWZroVkxczEfcLX_p\C0nLwT/view?usp=sharing.
+Dataset of CAPE reports are available here: https://drive.google.com/file/d/1Lx5e4vMN7BWZroVkxczEfcLX_pC0nLwT/view?usp=sharing.
